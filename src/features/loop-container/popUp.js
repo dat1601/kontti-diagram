@@ -17,7 +17,7 @@ function MainText(props) {
     <div className={'main-text-div ' + props.addClassName.mainText}>
       <div className="main-text">
         <strong>
-          <PointsMapping id={props.id} topic={props.topic} message={props.message} />
+          <PointsMapping id={props.id} message={props.message} title={props.title} />
         </strong>
       </div>
     </div>
@@ -36,7 +36,7 @@ export default function popUp(props) {
         <Popup
           trigger={open => (
             <div className="popup-trigger">
-              <MainText addClassName={props.addClassName} id={props.id} topic={props.topic} message={props.message} />
+              <MainText {...props} />
             </div>
           )}
           position={props.position}

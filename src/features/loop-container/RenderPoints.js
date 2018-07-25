@@ -13,6 +13,8 @@ export class RenderPoints extends Component {
 
   constructor(props) {
     super(props);
+    this.props.actions.getPointsSchema();
+
     var mqtt = require('mqtt');
 
     var host = 'wss://iot.research.hamk.fi:443/mqtt';
@@ -40,33 +42,58 @@ export class RenderPoints extends Component {
       options,
     );
 
-    
-
     // subscribe
     client.on('connect', function() {
       client.subscribe('hamk/iot/valkeakoski/kontti/ui/#');
     });
 
+    var returnMessage;
+    var returnTopic;
     //callback
     client.on('message', function(topic, message) {
       // message is Buffer
-      this.returnMessage = JSON.parse(message.toString());
-      this.returnTopic = topic.toString();
-      //console.log(returnTopic);
-      //console.log(returnMessage);
+      returnMessage = JSON.parse(message.toString());
+      returnTopic = topic.toString();
+
+      //  props.actions.mqtt(returnMessage, returnTopic);
+      //  console.log(props.loopContainer.mqtt);
+
+      switch (returnTopic) {
+        case 'hamk/iot/valkeakoski/kontti/ui/p1':
+          props.actions.mqttP1(returnMessage, returnTopic);
+          break;
+        case 'hamk/iot/valkeakoski/kontti/ui/p2':
+          props.actions.mqttP2(returnMessage, returnTopic);
+          break;
+        case 'hamk/iot/valkeakoski/kontti/ui/TE':
+          props.actions.mqttTe(returnMessage, returnTopic);
+          break;
+        case 'hamk/iot/valkeakoski/kontti/ui/HV':
+          props.actions.mqttHv(returnMessage, returnTopic);
+          break;
+        case 'hamk/iot/valkeakoski/kontti/ui/solar/heat':
+          props.actions.mqttSolar(returnMessage, returnTopic);
+          break;
+        default:
+          break;
+      }
     });
   }
 
-  componentDidMount() {
-    this.props.actions.getPointsSchema();
-    console.log(this.returnTopic);
-      console.log(this.returnMessage);
-  }
-
   render() {
+    const hv = this.props.loopContainer.mqttHV;
+    const te = this.props.loopContainer.mqttTE;
+    const solar = this.props.loopContainer.mqttSolar;
+    const p1 = this.props.loopContainer.mqttP1;
+    const p2 = this.props.loopContainer.mqttP2;
+    // const mqtt = this.props.loopContainer.mqtt;
+
     return (
       <div className="loop-container-render-points">
-        <SquarePoints info={this.props.loopContainer.pointsSchema} topic={this.returnTopic} message={this.returnMessage} />
+        <SquarePoints
+          info={this.props.loopContainer.pointsSchema}
+          message={{ ...hv, ...te, ...solar, ...p1, ...p2 }}
+        />
         <div>{this.returnMessage}</div>
       </div>
     );

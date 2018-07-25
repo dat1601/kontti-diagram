@@ -6,18 +6,14 @@
 
 // NOTE: initialState constant is necessary so that Rekit could auto add initial state when creating async actions.
 const initialState = {
-  getToePending: false,
-  getToeError: null,
-  getPumpPending: false,
-  getPumpError: null,
-  getPump2Pending: false,
-  getPump2Error: null,
-  toePoints: [],
-  pumpPoints: [],
-  pump2Points:[],
   getPointsSchemaPending: false,
   getPointsSchemaError: null,
   pointsSchema: [],
+  mqttTE: [],
+  mqttHV: [],
+  mqttP1: [],
+  mqttP2: [],
+  mqttSolar: [],
 };
 
 export default initialState;

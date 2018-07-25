@@ -1,22 +1,22 @@
 import {
-  LOOP_CONTAINER_MQTT,
+  LOOP_CONTAINER_MQTT_HV,
 } from '../../../../src/features/loop-container/redux/constants';
 
 import {
-  mqtt,
+  mqttHv,
   reducer,
-} from '../../../../src/features/loop-container/redux/mqtt';
+} from '../../../../src/features/loop-container/redux/mqttHv';
 
-describe('loop-container/redux/mqtt', () => {
-  it('returns correct action by mqtt', () => {
-    expect(mqtt()).toHaveProperty('type', LOOP_CONTAINER_MQTT);
+describe('loop-container/redux/mqttHv', () => {
+  it('returns correct action by mqttHv', () => {
+    expect(mqttHv()).toHaveProperty('type', LOOP_CONTAINER_MQTT_HV);
   });
 
-  it('handles action type LOOP_CONTAINER_MQTT correctly', () => {
+  it('handles action type LOOP_CONTAINER_MQTT_HV correctly', () => {
     const prevState = {};
     const state = reducer(
       prevState,
-      { type: LOOP_CONTAINER_MQTT }
+      { type: LOOP_CONTAINER_MQTT_HV }
     );
     // Should be immutable
     expect(state).not.toBe(prevState);

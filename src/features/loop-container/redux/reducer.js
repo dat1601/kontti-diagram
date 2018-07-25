@@ -7,18 +7,20 @@
 // https://medium.com/@nate_wang/a-new-approach-for-managing-redux-actions-91c26ce8b5da.
 
 import initialState from './initialState';
-import { reducer as getToeReducer } from './getToe';
-import { reducer as getPumpReducer } from './getPump';
-import { reducer as getPump2Reducer } from './getPump2';
 import { reducer as getPointsSchemaReducer } from './getPointsSchema';
-import { reducer as mqttReducer } from './mqtt';
+import { reducer as mqttTeReducer } from './mqttTe';
+import { reducer as mqttHvReducer } from './mqttHv';
+import { reducer as mqttP1Reducer } from './mqttP1';
+import { reducer as mqttP2Reducer } from './mqttP2';
+import { reducer as mqttSolarReducer } from './mqttSolar';
 
 const reducers = [
-  getToeReducer,
-  getPumpReducer,
-  getPump2Reducer,
   getPointsSchemaReducer,
-  mqttReducer,
+  mqttTeReducer,
+  mqttHvReducer,
+  mqttP1Reducer,
+  mqttP2Reducer,
+  mqttSolarReducer,
 ];
 
 export default function reducer(state = initialState, action) {
