@@ -1,5 +1,6 @@
 import {
   DefaultPage,
+  NavBar,
 } from './';
 
 export default {
@@ -11,5 +12,6 @@ export default {
       component: DefaultPage,
       isIndex: true,
     },
+    { path: '/navbar', name: 'Nav bar', component: NavBar },
   ],
 };

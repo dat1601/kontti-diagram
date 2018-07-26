@@ -48,7 +48,7 @@ export default function popUp(props) {
               src={
                 'https://iot.research.hamk.fi/visu/d-solo/KI1KYAHiz/toe-diagram?panelId=' +
                 props.panelId +
-                '&orgId=4&refresh=5s&from=now-6h&to=now&theme=light'
+                '&orgId=4&refresh=5s&from=now-6h&to=now'
               }
               title={props.title}
               width="450"

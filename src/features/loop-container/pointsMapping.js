@@ -53,7 +53,7 @@ export default function pointMapping(props) {
   // result = props.points.find(element => element.id === props.id);
 
   var output;
-  if (result) {
+  if (result || result === 0) {
     //console.log(result);
     output = <span>{isNaN(result) ? result : round(result, 3) + ' ' + unit}</span>;
   } else {
