@@ -4,7 +4,7 @@ import PointsMapping from './pointsMapping';
 
 function SubText(props) {
   return (
-    <div className={"sub-text-div " + props.addClassName.subTextDiv}>
+    <div className={'sub-text-div ' + props.addClassName.subTextDiv}>
       <div className="sub-text">
         <strong className="bold-text">{props.title}</strong>
       </div>
@@ -31,7 +31,7 @@ function PopUpWrapper(props) {
 export default function popUp(props) {
   return (
     <div className="loop-container-popup">
-      <PopUpWrapper {...props} >
+      <PopUpWrapper {...props}>
         <SubText addClassName={props.addClassName} title={props.title} />
         <Popup
           trigger={open => (
@@ -40,8 +40,17 @@ export default function popUp(props) {
             </div>
           )}
           position={props.position}
-          closeOnDocumentClick
-          contentStyle={{ width: 'auto' }}
+          
+          contentStyle={{
+            width: 'auto',
+            backgroundColor: '#FB8C00',
+            border: '1px solid rgba(29,27,27,0.75)',
+            borderRadius: '5px',
+            boxShadow: '1px 1px 5px 0 rgba(51, 50, 50, .75)',
+          }}
+          arrowStyle={{
+            background: '#FB8C00',
+          }}
         >
           <div className="content-div">
             <iframe

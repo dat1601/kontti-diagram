@@ -89,10 +89,10 @@ body {
   align-items: center;
   border-style: solid;
   border-width: 1px;
-  border-color: hsla(0, 0%, 100%, .03);
-  background-color: rgba(0, 0, 0, .28);
+  border-color: hsla(0, 0%, 100%, 0.03);
+  background-color: rgba(0, 0, 0, 0.28);
   box-shadow: 0 -1px 5px 0 #171717;
-  color: hsla(0, 0%, 100%, .56);
+  color: hsla(0, 0%, 100%, 0.56);
 }
 
 .diagram {
@@ -359,16 +359,17 @@ body {
   border-top: 1px solid #1d1b1b;
   border-left: 1px solid #1d1b1b;
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   color: #00897b;
   font-size: 12px;
   font-style: normal;
   font-weight: 600;
   cursor: pointer;
+  box-shadow: 1px 1px 1px 0 rgba(51, 50, 50, 0.75);
 }
 
 .main-text-div.temp {
-  background-color: rgba(0, 0, 0, .67);
+  background-color: rgba(0, 0, 0, 0.67);
   color: #fb8c00;
   font-size: 12px;
 }
@@ -454,7 +455,7 @@ body {
   display: none;
   width: 100vw;
   height: 120%;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .iframe-wrapper {
@@ -506,7 +507,7 @@ body {
   justify-content: center;
   border-radius: 50px;
   background-color: #212124;
-  box-shadow: 1px 1px 1px 0 rgba(51, 50, 50, .7);
+  box-shadow: 1px 1px 1px 0 rgba(51, 50, 50, 0.7);
   opacity: 0.85;
 }
 
