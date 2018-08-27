@@ -1,4 +1,4 @@
-import { DefaultPage, SideBar } from './';
+import { DefaultPage, NewSideBar } from './';
 import { Loop } from '../loop-container';
 import { home } from 'react-icons-kit/feather/home';
 import { activity } from 'react-icons-kit/feather/activity';
@@ -14,7 +14,7 @@ export default {
       isIndex: true,
       icon: home,
     },
-    { path: '/sidebar', name: 'Side Bar', component: SideBar },
     { path: '/loop', name: 'Loop', component: Loop, icon: activity },
+    { path: '/new-sidebar', name: 'New side bar', component: NewSideBar },
   ],
 };
